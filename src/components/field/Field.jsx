@@ -1,12 +1,15 @@
 import * as React from "react";
 import Character from "../character/Character";
 import EquipmentCell from "../equipmentCells/Cell/EquipmentCell";
-import Cells from "../equipmentCells/Cells";
+import { useDispatch } from "react-redux";
+import { setShopPopupDisplay } from "../../reducers/shopReducer";
 import "./Field.css";
 
 export default function Field() {
+  const dispatch = useDispatch();
+
   return (
-    <div>
+    <div onClick={() => dispatch(setShopPopupDisplay("none"))}>
       <div className="head">
         Шлем
         <EquipmentCell />
