@@ -4,7 +4,6 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    /* justify-content: center; */
     font-size: calc(10px + 2vmin);
     color: white;
 }
@@ -16,7 +15,7 @@
     font-size: 40px;
 }
 
-.shop_btn {
+.shop_btn, .inventory_btn {
     color: white;
     border: none;
     background-color: #282c34;
@@ -25,6 +24,6 @@
     cursor: pointer;
 }
 
-.shop_btn:hover {
+.shop_btn:hover,  .inventory_btn:hover{
     text-decoration: underline;
 }

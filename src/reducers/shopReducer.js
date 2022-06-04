@@ -1,7 +1,7 @@
 const SET_SHOP_POPUP_DISPLAY = "SET_SHOP_POPUP_DISPLAY";
 
 const defaultState = {
-  popupDisplay: "flex",
+  popupDisplay: "none",
 };
 
 export default function shopReducer(state = defaultState, action) {
