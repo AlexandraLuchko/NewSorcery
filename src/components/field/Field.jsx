@@ -1,13 +1,14 @@
 import * as React from "react";
 import Character from "../character/Character";
 import EquipmentCell from "../equipmentCells/Cell/EquipmentCell";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setShopPopupDisplay } from "../../reducers/shopReducer";
 import { setInventoryPopupDisplay } from "../../reducers/inventoryReducer";
 import "./Field.css";
 
 export default function Field() {
   const dispatch = useDispatch();
+  const equipmentCells = useSelector((state) => state.equipmentCells.equipment)
 
   return (
     <div
@@ -18,25 +19,25 @@ export default function Field() {
     >
       <div className="head">
         Шлем
-        <EquipmentCell />
+        <EquipmentCell id={0} cellData={equipmentCells[0]} />
       </div>
       <div className="field">
         <div className="leftCells">
           Оружие
-          <EquipmentCell />
+          <EquipmentCell id={1}  cellData={equipmentCells[1]} />
           Оружие
-          <EquipmentCell />
+          <EquipmentCell id={2}  cellData={equipmentCells[2]} />
           Сапоги
-          <EquipmentCell />
+          <EquipmentCell id={3}  cellData={equipmentCells[3]} />
         </div>
         <Character />
         <div className="rightCells">
           Нагрудник
-          <EquipmentCell />
+          <EquipmentCell id={4}  cellData={equipmentCells[4]} />
           Перчатки
-          <EquipmentCell />
+          <EquipmentCell id={5}  cellData={equipmentCells[5]} />
           Поножи
-          <EquipmentCell />
+          <EquipmentCell id={6}  cellData={equipmentCells[6]} />
         </div>
       </div>
     </div>
