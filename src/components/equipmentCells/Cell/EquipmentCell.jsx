@@ -1,12 +1,11 @@
 import * as React from "react";
 import "./equipmentCell.css";
 import { useSelector, useDispatch } from "react-redux";
-import { setEquipment } from "../../../reducers/equipmentReducer";
+import { setEquipment } from "../../../reducers/equipmentCellsReducer";
 
 export default function EquipmentCell({ id, cellData }) {
   const currentItem = useSelector((state) => state.shop.currentItem);
   const dispatch = useDispatch();
-  console.log(cellData);
 
   function dragOverHandler(e) {
     e.preventDefault();
@@ -15,8 +14,6 @@ export default function EquipmentCell({ id, cellData }) {
   function dropCaptureHandler(e) {
     e.preventDefault();
     dispatch(setEquipment(id, currentItem));
-    console.log(currentItem);
-    console.log(e.target);
   }
 
   if (cellData.item === null) {

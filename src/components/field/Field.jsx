@@ -24,20 +24,20 @@ export default function Field() {
       <div className="field">
         <div className="leftCells">
           Оружие
-          <EquipmentCell id="2"  cellData={equipmentCells[1]} />
+          <EquipmentCell id={1}  cellData={equipmentCells[1]} />
           Оружие
-          <EquipmentCell id="3"  cellData={equipmentCells[2]} />
+          <EquipmentCell id={2}  cellData={equipmentCells[2]} />
           Сапоги
-          <EquipmentCell id="4"  cellData={equipmentCells[3]} />
+          <EquipmentCell id={3}  cellData={equipmentCells[3]} />
         </div>
         <Character />
         <div className="rightCells">
           Нагрудник
-          <EquipmentCell id="5"  cellData={equipmentCells[4]} />
+          <EquipmentCell id={4}  cellData={equipmentCells[4]} />
           Перчатки
-          <EquipmentCell id="6"  cellData={equipmentCells[5]} />
+          <EquipmentCell id={5}  cellData={equipmentCells[5]} />
           Поножи
-          <EquipmentCell id="7"  cellData={equipmentCells[6]} />
+          <EquipmentCell id={6}  cellData={equipmentCells[6]} />
         </div>
       </div>
     </div>

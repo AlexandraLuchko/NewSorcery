@@ -8,10 +8,6 @@ export default function ShopPopup() {
   const popupDisplay = useSelector((state) => state.shop.popupDisplay);
   const dispatch = useDispatch();
 
-  // let isRequiredImage = (element, index, array, itemName) => {
-  //   return element.item === itemName;
-  // };
-
   function dragStartHandler(e, item){
     dispatch(setCurrentItem(item))
   }
@@ -48,9 +44,6 @@ export default function ShopPopup() {
           <img
             src={
               item.path
-              // images.find((element, i, array) =>
-              //   isRequiredImage(element, i, array, item.name)
-              // ).path
             }
             onDragStart={(e) => dragStartHandler(e, item)}
             onDragLeave={(e) => dragLeaveHandler(e)}
