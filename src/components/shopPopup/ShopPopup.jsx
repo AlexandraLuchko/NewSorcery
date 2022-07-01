@@ -1,11 +1,11 @@
 import * as React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setShopPopupDisplay, setCurrentItem } from "../../reducers/shopReducer";
-import { shopAssortment, images } from "../../data";
 import "./shopPopup.css";
 
 export default function ShopPopup() {
   const popupDisplay = useSelector((state) => state.shop.popupDisplay);
+  const shopAssortment = useSelector((state) => state.shop.shopAssortment);
   const dispatch = useDispatch();
 
   function dragStartHandler(e, item){

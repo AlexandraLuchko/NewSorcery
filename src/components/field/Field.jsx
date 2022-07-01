@@ -36,7 +36,7 @@ export default function Field() {
           <EquipmentCell id={4}  cellData={equipmentCells[4]} />
           Перчатки
           <EquipmentCell id={5}  cellData={equipmentCells[5]} />
-          Поножи
+          Штаны
           <EquipmentCell id={6}  cellData={equipmentCells[6]} />
         </div>
       </div>
