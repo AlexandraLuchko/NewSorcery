@@ -27,7 +27,21 @@
     cursor: pointer;
 }
 
-.inventory {
+.inventory_title {
     margin-left: 20px;
     height: 40px;
+}
+
+.inventory {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: top;
+    margin: 10px;
+}
+
+.image {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    cursor: grab;
 }
