@@ -38,10 +38,5 @@
     flex-wrap: wrap;
     align-items: top;
     margin: 10px;
-}
-
-.image {
-    margin-left: 10px;
-    margin-bottom: 10px;
-    cursor: grab;
+    position: static;
 }

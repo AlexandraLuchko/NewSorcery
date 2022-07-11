@@ -1,0 +1,31 @@
+.itemDescriptionPopup {
+    width: 27%;
+    height: 45%;
+    background: rgba(101, 79, 147, 0.5);
+    top: 51%;
+    left: 35%;
+    bottom: 0;
+    position: absolute;
+    z-index: 2;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 5px 0 5px;
+   
+}
+
+.itemDescription{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 25px;
+    margin: 10px 20px;
+    color: white;
+}
+
+.name, .description, .price, .stats {
+    font-size: 20px;
+    margin-left: 25px;
+}
+
+.price{
+    display: flex;
+}

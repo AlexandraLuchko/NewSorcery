@@ -1,5 +1,4 @@
 .character{
-    background-color: #461aae;
     min-height: 10vh;
     display: flex;
     flex-direction: column;
@@ -7,4 +6,9 @@
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
+}
+
+.characterImage{
+    width: 430px;
+    height: 600px;
 }

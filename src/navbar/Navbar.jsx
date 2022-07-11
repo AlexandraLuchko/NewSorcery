@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import InventoryPopup from "../components/inventory/Inventory";
 import ShopPopup from "../components/shopPopup/ShopPopup";
 import { setShopPopupDisplay } from "../reducers/shopReducer";
@@ -8,21 +8,25 @@ import "./Navbar.css";
 
 export default function Navbar() {
   const dispatch = useDispatch();
+  const inventoryDisplay = useSelector((state) => state.inventory.popupDisplay)
 
   React.useEffect(() => {
     document.addEventListener("keydown", keyDownHandler);
   });
 
   function keyDownHandler(e) {
-    if (e.keyCode === 73) inventoryPopupHandler();
-  }
+    if (e.keyCode === 73 && inventoryDisplay === "none"){
+      inventoryPopupHandler("flex");
+    } else{
+      inventoryPopupHandler("none");
+  }}
 
   function showPopupHandler() {
     dispatch(setShopPopupDisplay("flex"));
   }
 
-  function inventoryPopupHandler() {
-    dispatch(setInventoryPopupDisplay("flex"));
+  function inventoryPopupHandler(display) {
+    dispatch(setInventoryPopupDisplay(display));
   }
 
   return (

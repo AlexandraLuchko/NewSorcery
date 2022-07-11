@@ -7,18 +7,36 @@ import {
   setCurrentItem,
 } from "../../../reducers/shopReducer";
 import { deleteItemFromInventory } from "../../../reducers/inventoryReducer";
+import Item from "../../item/Item";
+import { setNewWarriorStats } from "../../../reducers/profileReducer";
 
 export default function EquipmentCell({ id, cellData }) {
   const currentItem = useSelector((state) => state.shop.currentItem);
   const dispatch = useDispatch();
   const equipment = useSelector((state) => state.equipmentCells.equipment);
+  const basicStats = useSelector((state) => state.profile.warrior.basicStats);
 
   function dragStartHandler(e, item) {
     dispatch(setCurrentItem(item));
+    deleteStats()
   }
 
   function dragOverHandler(e) {
     e.preventDefault();
+  }
+
+  function setNewStats() {
+    basicStats.attackPower += currentItem.attackPower;
+    basicStats.healPoints += currentItem.healPoints;
+    basicStats.manaPoints += currentItem.manaPoints;
+    dispatch(setNewWarriorStats(basicStats));
+  }
+
+  function deleteStats(){
+    basicStats.attackPower -= currentItem.attackPower;
+    basicStats.healPoints -= currentItem.healPoints;
+    basicStats.manaPoints -= currentItem.manaPoints;
+    dispatch(setNewWarriorStats(basicStats));
   }
 
   function dropCaptureHandler(e) {
@@ -29,6 +47,7 @@ export default function EquipmentCell({ id, cellData }) {
       dispatch(deleteItemFromShop(currentItem));
       dispatch(deleteItemFromInventory(currentItem, equipment));
     }
+    setNewStats();
   }
 
   if (cellData.item === null) {
@@ -49,12 +68,11 @@ export default function EquipmentCell({ id, cellData }) {
         onDragOver={(e) => dragOverHandler(e)}
         onDrop={(e) => dropCaptureHandler(e)}
       >
-        <img
-          src={cellData.item.path}
-          alt={"itemImage"}
-          width={40}
-          height={40}
-        ></img>
+        <Item
+          key={cellData.item.id}
+          item={cellData.item}
+          className="equipmentItem"
+        />
       </div>
     );
   }

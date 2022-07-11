@@ -1,10 +1,12 @@
 const SET_INVENTORY_POPUP_DISPLAY = "SET_INVENTORY_POPUP_DISPLAY";
 const SET_INVENTORY = "SET_INVENTORY";
 const DELETE_ITEM_FROM_INVENTORY = "DELETE_ITEM_FROM_INVENTORY";
+const SET_NEW_BUDGET = "SET_NEW_BUDGET";
 
 const defaultState = {
   popupDisplay: "none",
   inventory: [],
+  playerBudget: 1000,
 };
 
 export default function inventoryReducer(state = defaultState, action) {
@@ -21,7 +23,9 @@ export default function inventoryReducer(state = defaultState, action) {
             (item) => item.name !== action.payload.name
           ),
         ],
-      }  
+      } 
+      case SET_NEW_BUDGET:
+        return { ...state, playerBudget: action.payload} 
     default:
       return state;
   }
@@ -41,3 +45,8 @@ export const deleteItemFromInventory = (item) => ({
   type: DELETE_ITEM_FROM_INVENTORY,
   payload: item,
 });
+
+export const setNewBudget = (newBudget) => ({
+  type: SET_NEW_BUDGET,
+  payload: newBudget,
+})
