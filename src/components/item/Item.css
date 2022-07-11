@@ -1,0 +1,15 @@
+.inventoryItem {
+    margin: 5px;
+    cursor: grab;
+}
+
+.shopItem_Buy{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.buyButton{
+    cursor: pointer;
+}

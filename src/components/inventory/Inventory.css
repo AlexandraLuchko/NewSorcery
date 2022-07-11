@@ -10,6 +10,7 @@
     border-radius: 8px;
     display: flex;
     flex-direction: column;
+    z-index: 1;
 }
 
 .inventoryANDbtn {
@@ -40,8 +41,8 @@
     margin: 10px;
 }
 
-.image {
-    margin-left: 10px;
-    margin-bottom: 10px;
-    cursor: grab;
+.budget{
+    height: 40px;
+    margin-top: 10px;
+    display: flex;
 }
