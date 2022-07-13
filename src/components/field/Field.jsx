@@ -1,5 +1,7 @@
 import * as React from "react";
-import Character from "../character/Character";
+import Warrior from "../character/Warrior";
+import Archer from "../character/Archer";
+import Wizard from "../character/Wizard";
 import EquipmentCell from "../equipmentCells/Cell/EquipmentCell";
 import { useDispatch, useSelector } from "react-redux";
 import { setShopPopupDisplay } from "../../reducers/shopReducer";
@@ -14,6 +16,8 @@ export default function Field() {
   const selectedItem = useSelector(
     (state) => state.itemDescription.mouseOverItem
   );
+  const character = useSelector((state) => state.profile.chosedCharacter);
+  
 
   return (
     <div
@@ -35,7 +39,21 @@ export default function Field() {
           Сапоги
           <EquipmentCell id={3} cellData={equipmentCells[3]} />
         </div>
-        <Character />
+        {character === "warrior" ? (
+          <Warrior className="character"/>
+        ) : (
+          <div></div>
+        )}  
+        {character === "archer" ? (
+          <Archer className="character"/>
+        ) : (
+          <div></div>
+        )}
+        {character === "wizard" ? (
+          <Wizard className="character"/>
+        ) : (
+          <div></div>
+        )}
         <div className="rightCells">
           Нагрудник
           <EquipmentCell id={4} cellData={equipmentCells[4]} />

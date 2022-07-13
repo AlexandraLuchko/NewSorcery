@@ -1,10 +1,10 @@
-.cell{
+.cell {
     width: 80px;
     height: 80px;
-    background-color: rgb(135, 107, 187);
+    background-color: rgb(76, 134, 104, 0.5);
     margin: 10px;
 }
 
-.equipmentItem{
-margin: 5px;
+.equipmentItem {
+    margin: 5px;
 }
