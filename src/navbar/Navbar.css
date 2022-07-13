@@ -24,6 +24,20 @@
     cursor: pointer;
 }
 
-.shop_btn:hover,  .inventory_btn:hover{
+.shop_btn:hover,  .inventory_btn:hover, .characterSelect:hover{
     text-decoration: underline;
+}
+
+.characterSelect{
+    background-color: #282c34;
+    width: 150px;
+    color: white;
+    border: none;
+    font-size: 35px;
+    cursor: pointer;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.characterSelect option {
+    font-size: 25px;
 }
